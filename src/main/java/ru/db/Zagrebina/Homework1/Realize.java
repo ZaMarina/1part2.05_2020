@@ -3,7 +3,6 @@ package ru.db.Zagrebina.Homework1;
 public class Realize {
     public static void main(String[] args) {
 
-
         Participant[] team = {
                 new Cat("Борис", 2, 300),
                 new Human("Иван",1,700),
@@ -24,9 +23,13 @@ public class Realize {
         };
 
         for (Participant participant : team) {
-            participant.run();
-            participant.jump();
-            System.out.println(participant.toString());
+            for (Hurdles hurdle : hurdles) {
+                participant.jump(hurdle);
+                participant.jump(hurdle);
+            }
+            
+
+            //System.out.println(participant.toString());
         }
     }
 }
