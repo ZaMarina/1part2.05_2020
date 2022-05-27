@@ -21,15 +21,14 @@ public class Realize {
                 new Track(750),
                 new Wall(2)
         };
-
-        for (Participant participant : team) {
-            for (Hurdles hurdle : hurdles) {
-                participant.jump(hurdle);
-                participant.jump(hurdle);
+        for (int i = 0; i < hurdles.length; i++) {
+            for (Participant participant : team) {
+                participant.jump((Wall) hurdles[i]);
+                participant.run((Track) hurdles[i]);
+                System.out.println(participant);
             }
-            
 
-            //System.out.println(participant.toString());
         }
+
     }
 }
