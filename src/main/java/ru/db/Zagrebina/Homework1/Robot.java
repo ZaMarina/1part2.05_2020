@@ -34,6 +34,6 @@ public class Robot implements Participant {
 
     @Override
     public String toString() {
-        return "Робот" + name + " - " + (success ? "Преодолел дистанцию" : "Сошел с дистанции");
+        return "Робот " + name + " - " + (success ? "Преодолел дистанцию" : "Сошел с дистанции");
     }
 }

@@ -32,6 +32,6 @@ public class Human implements Participant {
     }
     @Override
     public String toString() {
-        return "Человек" + name + " - " + (success ? "Преодолел дистанцию" : "Сошел с дистанции");
+        return "Человек " + name + " - " + (success ? "Преодолел дистанцию" : "Сошел с дистанции");
     }
 }

@@ -10,8 +10,9 @@ public class Wall implements Hurdles{
     public boolean check(int n) {
         if (length<n){
             return true;
+        }else {
+
+            return false;
         }
-        System.out.println(this + "не может пройти это препятствие");
-        return false;
     }
 }

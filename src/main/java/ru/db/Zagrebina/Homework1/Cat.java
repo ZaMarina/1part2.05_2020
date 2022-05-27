@@ -32,6 +32,6 @@ public class Cat implements Participant {
 
     @Override
     public String toString() {
-        return "Кот" + name + " - " + (success ? "Преодолел дистанцию" : "Сошел с дистанции");
+        return "Кот " + name + " - " + (success ? "Преодолел дистанцию" : "Сошел с дистанции");
     }
 }

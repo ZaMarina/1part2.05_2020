@@ -1,5 +1,7 @@
 package ru.db.Zagrebina.Homework1;
 
+import java.util.Arrays;
+
 public class Realize {
     public static void main(String[] args) {
 
@@ -22,9 +24,17 @@ public class Realize {
                 new Wall(2)
         };
         for (int i = 0; i < hurdles.length; i++) {
+            System.out.println("Выполняется препятствие: " + hurdles[i]);
+            System.out.println();
+
             for (Participant participant : team) {
-                participant.jump((Wall) hurdles[i]);
-                participant.run((Track) hurdles[i]);
+
+                if (hurdles[i] instanceof Track) {
+                    participant.run((Track) hurdles[i]);
+
+                } else {
+                    participant.jump((Wall) hurdles[i]);
+                }
                 System.out.println(participant);
             }
 
