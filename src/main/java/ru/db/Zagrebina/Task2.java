@@ -1,49 +1,48 @@
 package ru.db.Zagrebina;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
+
+import java.util.Arrays;
+import java.util.Scanner;
 
 public class Task2 {
     public static void main(String[] args) {
-        Employee employee = new Employee();
+        String[][] arr = new String[][]{{"1", "2", "6", "7"}, {"5", "9", "5", "9"}, {"2", "1", "7", "4"}, {"4", "1", "5", "8"}};
+
         try {
-            employee.setAge(-15);
-        } catch (InvalidAgeException e) {
+            int result = SumElements(arr);
+            System.out.println("Общая сумма: " + result);
+        }catch (MyArraySizeException e){
             e.printStackTrace();
-
+        }catch (MyArrayDataException e){
+            e.printStackTrace();
         }
-    }
 
-    public static void m(String filename) /*throws FileNotFoundException - вот это писать не нужно, мы сделали свое исключение*/ {
-       final File file = new File(filename);
-        try {
-            FileInputStream fileInputStream = new FileInputStream(file);
-        } catch (FileNotFoundException e) {
-
-        //    throw e;//если мы вывели ошибку, но не хотим терять это сообщение и хотим чтобы выше оно тоже вышло, нам нужно еще раз его кинуть(это исключение) пишем throw e и закидываем в сигнатуру метода. И выше оно еще раз обрабатывается.
-            //но мы не хотим чтобы оно было проверяемым!
-            //В этом случае создаем собственное исключение
-            throw new MyNotFoudFileException("Произошла ошибка при открытии файла", e);//для этого нужен конструктор
-        }
     }
 
 
 
+    public static int SumElements(String[][] arr) throws MyArraySizeException, MyArrayDataException{
+        int count = 0;
+        if (arr.length != 4) {
+            throw new MyArraySizeException();
+        }
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i].length != 4) {
+                throw new MyArraySizeException();
+            }
+            for (int j = 0; j < arr[i].length; j++) {
+                try {
+                    count = count + Integer.parseInt(arr[i][j]);
+                } catch (NumberFormatException e) {
+                    throw new MyArrayDataException(i, j);
+                }
+
+            }
+            System.out.println(Arrays.toString(arr[i]));
+        }
+        return count;
+    }
 
 }
 
-class Employee{
-    private int age;
 
-    public void setAge(int age) throws InvalidAgeException{
-        if (age>=0 && age<150) {
-            this.age = age;
-        }else {
-            throw new InvalidAgeException(age);//throw используется для того чтобы бросить исключение. Создадим наше исключение(создадим класс)
-        }
-    }
-
-
-
-}
