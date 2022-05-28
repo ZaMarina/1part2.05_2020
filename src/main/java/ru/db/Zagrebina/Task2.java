@@ -1,8 +1,6 @@
 package ru.db.Zagrebina;
-
-
 import java.util.Arrays;
-import java.util.Scanner;
+
 
 public class Task2 {
     public static void main(String[] args) {
@@ -19,10 +17,8 @@ public class Task2 {
 
     }
 
-
-
     public static int SumElements(String[][] arr) throws MyArraySizeException, MyArrayDataException{
-        int count = 0;
+        int summa = 0;
         if (arr.length != 4) {
             throw new MyArraySizeException();
         }
@@ -32,15 +28,14 @@ public class Task2 {
             }
             for (int j = 0; j < arr[i].length; j++) {
                 try {
-                    count = count + Integer.parseInt(arr[i][j]);
+                    summa = summa + Integer.parseInt(arr[i][j]);
                 } catch (NumberFormatException e) {
                     throw new MyArrayDataException(i, j);
                 }
-
             }
             System.out.println(Arrays.toString(arr[i]));
         }
-        return count;
+        return summa;
     }
 
 }
