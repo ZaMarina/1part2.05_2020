@@ -2,7 +2,6 @@ package ru.db.Zagrebina.HW2;
 
 import ru.db.Zagrebina.*;
 
-import java.util.Objects;
 
 public class Task2 {
     public static void main(String[] args) {
@@ -25,16 +24,16 @@ public class Task2 {
                 new Wall(2)
 
         };
-
-        for (Persons persons : team) {
-            System.out.println();
-            for (Obstacles obstacle : obstacles) {
-                if (!obstacle.action(persons)){
-                    break;
-                }
-
+        for (Obstacles obstacle : obstacles) {
+            for (Persons persons : team) {
+                obstacle.overcome(persons);
             }
-            System.out.println();
+        }
+        System.out.println("===Успешно прошли все препятствия===");
+        for (Persons persons : team) {
+            if (persons.isPlay()){
+                System.out.println(persons);
+            }
         }
     }
 }

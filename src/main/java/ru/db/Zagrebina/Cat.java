@@ -2,35 +2,38 @@ package ru.db.Zagrebina;
 
 public class Cat implements Persons{
     private String name;
-    private int canJump;
-    private int canRun;
+    private int jumpLimit;
+    private int runLimit;
+    private boolean play;
 
-    public Cat(String name, int canJump, int canRun) {
+    public Cat(String name, int jumpLimit, int runLimit) {
         this.name = name;
-        this.canJump = canJump;
-        this.canRun = canRun;
+        this.jumpLimit = jumpLimit;
+        this.runLimit = runLimit;
+        this.play = true;
     }
-
-    public int getCanJump() {
-        return canJump;
-    }
-
-    public int getCanRun() {
-        return canRun;
+    @Override
+    public boolean isPlay() {
+        return play;
     }
 
     @Override
-    public void run() {
-        System.out.println(this + "Бегает");
+    public void setPlay(boolean play) {
+        this.play = play;
     }
 
     @Override
-    public void jump() {
-        System.out.println(this + "Прыгает");
+    public int getJumpLimit() {
+        return jumpLimit;
+    }
+
+    @Override
+    public int getRunLimit() {
+        return runLimit;
     }
 
     @Override
     public String toString() {
-        return "Кот по имени " + name;
+        return "Кот по имени" + name;
     }
 }

@@ -1,5 +1,5 @@
 package ru.db.Zagrebina;
 
 public interface Obstacles {
-    boolean action(Persons persons);
+    void overcome (Persons persons);
 }

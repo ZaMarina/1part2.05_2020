@@ -2,34 +2,39 @@ package ru.db.Zagrebina;
 
 public class Robot implements Persons {
     private String name;
-    private int canJump;
-    private int canRun;
+    private int jumpLimit;
+    private int runLimit;
+    private boolean play;
 
-    public Robot(String name, int canJump, int canRun) {
+    public Robot(String name, int jumpLimit, int runLimit) {
         this.name = name;
-        this.canJump = canJump;
-        this.canRun = canRun;
-    }
-    public int getCanJump() {
-        return canJump;
-    }
-
-    public int getCanRun() {
-        return canRun;
+        this.jumpLimit = jumpLimit;
+        this.runLimit = runLimit;
+        this.play = true;
     }
 
     @Override
-    public void run() {
-
-        System.out.println(this + "Бегает");
+    public boolean isPlay() {
+        return play;
     }
 
     @Override
-    public void jump() {
-        System.out.println(this + "Прыгает");
+    public void setPlay(boolean play) {
+        this.play = play;
     }
+
+    @Override
+    public int getJumpLimit() {
+        return jumpLimit;
+    }
+
+    @Override
+    public int getRunLimit() {
+        return runLimit;
+    }
+
     @Override
     public String toString() {
-        return "Робот по имени " + name;
+        return " Робот по имени " + name;
     }
 }

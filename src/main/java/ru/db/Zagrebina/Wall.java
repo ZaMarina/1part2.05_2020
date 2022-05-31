@@ -1,19 +1,23 @@
 package ru.db.Zagrebina;
 
 public class Wall implements Obstacles {
-    private int value;
+    private int height;
 
     public Wall(int value) {
-        this.value = value;
+        this.height = value;
     }
+
     @Override
-    public boolean action(Persons persons) {
-        if (this.value<=persons.getCanRun()){
-            System.out.println(persons.toString() + " Перепрыгнул " + this.value + " метров. Молодец!");
-            return true;
-        }else {
-            System.out.println(persons.toString() + " Не смог перепрыгнуть " + this.value + " метров. Сошел с дистанции");
-            return false;
-        }
+    public void overcome(Persons persons) {
+persons.jump(this);
+    }
+
+    @Override
+    public String toString() {
+        return "Стена высотой " + height + " метров";
+    }
+
+    public int getHeight() {
+        return height;
     }
 }
