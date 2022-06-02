@@ -19,9 +19,8 @@ public class Phonebook {
 
     public void getPhonebook(String surname){
         if (phonebook.containsValue(surname)){
-         //   Set<Map.Entry<Integer,String >>set = phonebook.entrySet();//Map.Entry<K, V> - список пар.
-            //entrySet возвращает набор элементов коллекции
-
+         //Map.Entry<K, V> - список пар...
+            // entrySet возвращает набор элементов коллекции
             for (Map.Entry<Integer, String> map: phonebook.entrySet()){
                 if (map.getValue().equals(surname)) {
                     System.out.println(map.getKey() + " " + map.getValue());
@@ -31,8 +30,6 @@ public class Phonebook {
         }else {
             System.out.println("По запросу: " + surname + " - вариантов не найдено");
         }
-
     }
-
 
 }
