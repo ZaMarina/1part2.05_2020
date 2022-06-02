@@ -32,7 +32,7 @@ public class Task3 {
                     count++;
             }
 }
-         //   System.out.println("Слово \"" + s +"\" встретилось " + count + " раз");//выведет в столбик элементы
+            System.out.println("Слово \"" + s +"\" встретилось " + count + " раз");//выведет в столбик элементы
         }
 //Задача 2. Телефонный справочник
         Phonebook phonebook = new Phonebook();
