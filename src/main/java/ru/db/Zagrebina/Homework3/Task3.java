@@ -18,9 +18,9 @@ public class Task3 {
         words.add("да");
         words.add("да");
 
-        for (String word : words) {
-
-        }
+//        for (String word : words) {
+//
+//        }
         System.out.println(words);//выведет в консоль все что есть
         HashSet<String> set = new HashSet<>(words);
 
