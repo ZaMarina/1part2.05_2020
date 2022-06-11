@@ -1,6 +1,6 @@
 package ru.db.Zagrebina.Homework5;
 
-//домашняя работа
+//домашняя работа. Один поток и два потока
 
 public class Task5 {
     private static final int SIZE = 10_000_000;
