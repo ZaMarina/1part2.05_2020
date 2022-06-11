@@ -1,13 +1,10 @@
 package ru.db.Zagrebina.Lesson6;
 
-
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.Socket;
 import java.util.Scanner;
-
-
 
 public class EchoClient {
 
@@ -30,7 +27,6 @@ public class EchoClient {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
 
     private void sendMessage(String message) {
@@ -43,7 +39,7 @@ public class EchoClient {
     }
 
     private void openConnection() throws IOException {
-        socket = new Socket("127.0.0.1", 8189);//указывается IP адрес и порт(локал хост, т.е. сама машина, и указали порт как в сервере)
+        socket = new Socket("127.0.0.1", 8189);//указывается IP адрес и порт
         //далее инициализируем наши классы для записи сообщений
         in = new DataInputStream(socket.getInputStream());
         out = new DataOutputStream(socket.getOutputStream());
@@ -62,11 +58,10 @@ new Thread(()->{
         closeConnection();
     }
 }).start();
-
     }
 
     private void closeConnection() {
-        //1. закрываем потоки ввода вывода
+        //закрываем потоки ввода/вывода
         if (in!= null){
             try {
                 in.close();
