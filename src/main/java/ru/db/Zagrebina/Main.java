@@ -2,6 +2,7 @@ package ru.db.Zagrebina;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello");
+//вложенный класс, это класс и внутри еще один класс(класс в классе)
+
     }
 }
